@@ -1608,7 +1608,7 @@ rule Unk_Crime_Downloader_1
 
     condition:
         all of them or pe.imphash()=="4f8a708f1b809b780e4243486a40a465"
-
+}
 rule Unk_DesktopLoader
 {
     meta:
