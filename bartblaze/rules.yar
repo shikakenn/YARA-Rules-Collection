@@ -2029,44 +2029,6 @@ rule PS_in_LNK
         isLNK and any of them
 }
 
-rule Script_in_LNK
-{
-    meta:
-        id = "24OwxeALdNyMpIq2oeeatL"
-        fingerprint = "bed7b00cdd2966629d9492097d357b729212d6d90251b9f1319634af05f40fdc"
-        version = "1.0"
-        creation_date = "2020-01-01"
-        first_imported = "2021-12-30"
-        last_modified = "2021-12-30"
-        status = "RELEASED"
-        sharing = "TLP:WHITE"
-        source = "BARTBLAZE"
-        author = "@bartblaze"
-        description = "Identifies scripting artefacts in shortcut (LNK) files."
-        category = "INFO"
-
-    strings:
-        $ = "javascript" ascii wide nocase
-        $ = "jscript" ascii wide nocase
-        $ = "vbscript" ascii wide nocase
-        $ = "wscript" ascii wide nocase
-        $ = "cscript" ascii wide nocase
-        $ = ".js" ascii wide nocase
-        $ = ".vb" ascii wide nocase
-        $ = ".wsc" ascii wide nocase
-        $ = ".wsh" ascii wide nocase
-        $ = ".wsf" ascii wide nocase
-        $ = ".sct" ascii wide nocase
-        $ = ".cmd" ascii wide nocase
-        $ = ".hta" ascii wide nocase
-        $ = ".bat" ascii wide nocase
-        $ = "ActiveXObject" ascii wide nocase
-        $ = "eval" ascii wide nocase
-
-    condition:
-        isLNK and any of them
-}
-
 rule EXE_in_LNK
 {
     meta:
@@ -2183,33 +2145,6 @@ rule Compilation_in_LNK
         isLNK and any of them
 }
 
-rule Download_in_LNK
-{
-    meta:
-        id = "4oUWRvBhzXFLJVKxasN6Cd"
-        fingerprint = "9b95b86b48df38523f1e382483c7a7fd96da1a0244b5ebdd2327eaf904afd117"
-        version = "1.0"
-        creation_date = "2020-01-01"
-        first_imported = "2021-12-30"
-        last_modified = "2021-12-30"
-        status = "RELEASED"
-        sharing = "TLP:WHITE"
-        source = "BARTBLAZE"
-        author = "@bartblaze"
-        description = "Identifies download artefacts in shortcut (LNK) files."
-        category = "INFO"
-
-    strings:
-        $ = "bitsadmin" ascii wide nocase
-        $ = "certutil" ascii wide nocase
-        $ = "ServerXMLHTTP" ascii wide nocase
-        $ = "http" ascii wide nocase
-        $ = "ftp" ascii wide nocase
-        $ = ".url" ascii wide nocase
-
-    condition:
-        isLNK and any of them
-}
 
 rule MSOffice_in_LNK
 {
@@ -2318,29 +2253,6 @@ rule SMB_in_LNK
         isLNK and any of them
 }
 
-
-rule Long_RelativePath_LNK
-{
-    meta:
-        id = "2ogEIXl8u2qUbIgxTmruYX"
-        fingerprint = "4b822248bade98d0528ab13549797c225784d7f953fe9c14d178c9d530fb3e55"
-        version = "1.0"
-        creation_date = "2020-01-01"
-        first_imported = "2021-12-30"
-        last_modified = "2025-02-16"
-        status = "RELEASED"
-        sharing = "TLP:WHITE"
-        source = "BARTBLAZE"
-        author = "@bartblaze"
-        description = "Identifies shortcut (LNK) file with a long relative path. Might be used in an attempt to hide the path."
-        category = "INFO"
-
-    strings:
-        $ = "..\\..\\..\\..\\..\\..\\" ascii wide nocase
-
-    condition:
-        isLNK and any of them
-}
 
 rule Large_filesize_LNK
 {
