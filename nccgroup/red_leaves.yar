@@ -162,25 +162,6 @@ rule malware_red_leaves_loader_starburn_generic {
   condition:
     $xor_loop or (2 of them)
 }
-
-rule malware_red_leaves_loader_starburn {
-    meta:
-        id = "2QBSp8Oi5ezbExgB0pZnqB"
-        fingerprint = "v1_sha256_c8b1e71dd4578acec7d401c38763021c3c8c0e88906965ed2e7beb7e0b594547"
-        version = "1.0"
-        modified = "2025-02-27"
-        status = "RELEASED"
-        sharing = "TLP:WHITE"
-        source = "CYBERDEFENCE"
-        author = "David Cannings"
-        description = "Possible APT10 loader using starburn.dll (function GetVersion modified)"
-        category = "INFO"
-        sha256 = "5262cb9791df50fafcb2fbd5f93226050b51efe400c2924eecba97b7ce437481"
-
-  condition:
-    pe.exports("StarBurn_GetVersion") and filesize < 200KB
-}
-
 rule malware_red_leaves_memory {
     meta:
         id = "2SQpiFvSEDi43brP636Hov"
