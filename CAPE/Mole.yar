@@ -1,0 +1,22 @@
+rule Mole
+{
+    meta:
+        id = "4XjPHQH8qAcldr0eSDUAUY"
+        fingerprint = "v1_sha256_8be4d190d554a610360c0e04b33da59eb00319395e5b2000d580546ce6503786"
+        version = "1.0"
+        modified = "2025-02-27"
+        status = "RELEASED"
+        sharing = "TLP:WHITE"
+        source = "CAPE"
+        author = "kevoreilly"
+        description = "Mole Payload"
+        category = "INFO"
+        cape_type = "Mole Payload"
+
+    strings:
+        $a1 = ".mole0" wide
+        $a2 = "_HELP_INSTRUCTION.TXT" wide
+        $a3 = "-----BEGIN PUBLIC KEY----- MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQ"
+    condition:
+        uint16(0) == 0x5A4D and (all of ($a*))
+}
