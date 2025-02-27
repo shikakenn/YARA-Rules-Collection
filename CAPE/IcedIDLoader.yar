@@ -24,7 +24,6 @@ rule IcedIDLoader
         $download2 = {8B 75 ?? 8D 4D ?? 8B 7D ?? 8B D6 57 89 1E 89 1F E8 [4] 59 3D C8 00 00 00 75 05 33 C0 40 EB}
         $download3 = {B8 50 00 00 00 66 89 45 ?? 4C 89 65 ?? 4C 89 75 ?? E8 [4] 48 8B 1E 3D 94 01 00 00}
         $major_ver = {0F B6 05 ?? ?? ?? ?? 6A ?? 6A 72 FF 75 0C 6A 70 50 FF 35 ?? ?? ?? ?? 8D 45 80 FF 35 ?? ?? ?? ?? 6A 63 FF 75 08 6A 67 50 FF 75 10 FF 15 ?? ?? ?? ?? 83 C4 38 8B E5 5D C3}
-        $decode1 = {4? 8D [5-6] 8A 4? [1-3] 32 }//0? 01 88 44 [2] 4?}
         $decode2 = {42 0F B6 4C 02 ?? 42 0F B6 04 02 32 C8 88 8C 15 ?? ?? ?? ?? 48 FF C2 48 83 FA 20}
     condition:
         2 of them
