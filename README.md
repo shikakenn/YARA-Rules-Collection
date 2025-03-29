@@ -1,5 +1,6 @@
 # YARA-Rules-Collection
 
+
 git clone https://github.com/CybercentreCanada/CCCS-Yara.git
 cd CCCS-Yara
 pip install  .
